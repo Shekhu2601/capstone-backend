@@ -35,14 +35,14 @@ router.get(("/") , async(req, res)=>{
     res.status(200).json(job)
 })
 // authenticed 
-/*router.get(("/:id") , authMiddleware, async(req, res)=>{
+router.get(("/:id") , authMiddleware, async(req, res)=>{
     const id =req.params.id;
     const job =await Job.findById(id);
     if(!job){ return res.status(400).json({message:"job not found"})
 
     }
     res.status(200).json(job)
-})*/
+})
 
 // delete jobs
 router.delete("/:id", authMiddleware, async (req,res)=>{
@@ -87,7 +87,7 @@ router.get("/search/:title", async (req, res) => {
     res.status(200).json(jobs);
 })
   
- router.get("/:id", validateRequest({
+ /*router.get("/:id", validateRequest({
      params: z.object({
          id: z.string().uuid()
      }),
@@ -102,5 +102,5 @@ router.get("/search/:title", async (req, res) => {
     
      
  }
- );
+ );*/
 module.exports =router;
