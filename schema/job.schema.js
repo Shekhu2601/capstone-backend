@@ -24,7 +24,7 @@ const jobSchema = new Schema({
     jobType :{
         type:String,
         required:true,
-        enum:["full-time","part-time","contract","internship"]
+        enum:["Full-time","Part-time","Internship"]
     },
     remote :{
         type:Boolean,
